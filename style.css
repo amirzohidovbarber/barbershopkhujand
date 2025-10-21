@@ -1,0 +1,689 @@
+/* css/style.css - premium layout, no external images or videos */
+:root {
+  --bg: #060606;
+  --card: #213A57;
+  --muted: #bfbfbf;
+  --gold: #d4af37;
+  --glass: rgba(255, 255, 255, 0.03);
+  --container: 1100px;
+}
+
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Yatra One', serif;
+  background: linear-gradient(180deg, #0D4D66, #9FBFC5);
+  color: #fff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  top: 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent);
+  backdrop-filter: blur(6px);
+  z-index: 80;
+}
+
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 1px
+}
+
+.gold {
+  color: var(--gold)
+}
+
+.nav-links a {
+  color: #ddd;
+  margin-left: 20px;
+  text-decoration: none
+}
+
+.cta {
+  background: var(--gold);
+  color: #000;
+  padding: 8px 12px;
+  border-radius: 8px
+}
+
+.install-btn {
+  margin-left: 12px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: var(--gold);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #fff
+}
+
+/* HERO */
+.hero {
+  height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 70px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03)
+}
+
+/* Hero buttons */
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  /* центрируем по горизонтали */
+  align-items: center;
+  /* по вертикали */
+  gap: 12px;
+  /* расстояние между кнопками */
+  flex-wrap: nowrap;
+  /* запрещаем перенос */
+}
+
+/* Мобильные экраны */
+@media (max-width: 480px) {
+  .hero-actions {
+    flex-wrap: nowrap;
+    /* запрет переноса */
+    justify-content: center;
+    /* центрируем по горизонтали */
+    gap: 10px;
+    /* расстояние между кнопками */
+  }
+
+  .hero-actions .btn {
+    flex: 1 1 auto;
+    /* растягиваем кнопки по ширине */
+    max-width: 180px;
+    /* ограничиваем максимальную ширину */
+    min-width: 100px;
+    /* минимальная ширина для удобного клика */
+  }
+}
+
+
+
+.parallax {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transform-style: preserve-3d
+}
+
+.layer {
+  position: absolute;
+  inset: 0;
+  transform-origin: center;
+  will-change: transform, opacity
+}
+
+.layer-back {
+  background: radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.06), transparent 10%), conic-gradient(from 180deg at 50% 50%, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.15));
+  filter: blur(18px);
+  opacity: 0.8
+}
+
+.layer-mid {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25));
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+  transform: translateZ(40px) scale(1.05)
+}
+
+.layer-front {
+  background: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.01) 0 2px, transparent 2px 8px);
+  opacity: 0.09;
+  transform: translateZ(80px) scale(1.12)
+}
+
+/* Hero content */
+.hero-inner {
+  text-align: center;
+  z-index: 5;
+  padding: 40px
+}
+
+.hero-title {
+  font-size: 44px;
+  margin: 0
+}
+
+.hero-sub {
+  color: var(--muted);
+  margin-top: 8px;
+  margin-bottom: 18px
+}
+
+.hero-actions .btn {
+  margin: 8px
+}
+
+/* Sections */
+.section {
+  padding: 100px 0
+}
+
+.services .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px
+}
+
+.card {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.03)
+}
+
+/* Masters */
+.master-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px
+}
+
+.master-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+  padding: 14px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.03)
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #333, #111);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--gold);
+  font-size: 28px;
+  margin-bottom: 8px
+}
+
+
+.btn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer
+}
+
+.primary {
+  background: var(--gold);
+  color: #000;
+  font-weight: 700
+}
+
+.ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06)
+}
+
+/* Queue panel */
+.queue-panel {
+  margin-top: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 12px;
+  border-radius: 8px;
+  color: var(--gold)
+}
+
+/* Footer */
+.site-footer {
+  padding: 28px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 14px
+}
+
+/* small improvements */
+.note {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 8px
+}
+
+@media (max-width:900px) {
+  .hero-title {
+    font-size: 36px
+  }
+
+  .site-header {
+    height: 64px;
+    padding: 0 14px
+  }
+
+  .booking-form .row {
+    flex-direction: column
+  }
+}
+
+body {
+  animation: pulse 2s infinite;
+
+  @keyframes pulse {
+
+    0%,
+    100% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.2);
+    }
+  }
+
+}
+
+/* Место для галочки */
+select[name="service"] option {
+  position: relative;
+  padding-right: 25px;
+  /* место для галочки справа */
+}
+
+/* Показываем галочку для выбранного пункта */
+select[name="service"] option:checked::after {
+  content: "✔";
+  position: absolute;
+  right: 5px;
+  color: var(--gold);
+}
+
+/* Стили для скроллбара в селекте */
+
+.hero-logo {
+  width: 250px;      /* размер логотипа */
+  height: 250px;
+  margin: 0 auto 20px; /* центрируем и отступ снизу */
+}
+
+.hero-logo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* круглая аватарка */
+  border: 3px solid #d4af37; /* золотая рамка для акцента */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* тень для глубины */
+}
+select[name="service"] {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) rgba(255, 255, 255, 0.1);
+}
+
+select[name="service"]::-webkit-scrollbar {
+  width: 8px;
+}
+
+
+
+
+
+.hero {
+  display: table;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 135vh; /* чтобы футер точно внизу */
+  position: relative;
+}
+
+
+.site-footerr {
+  padding: 20px;
+  border-top: 1px solid rgba(255,255,255,0.03);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.site-footerr .container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.site-footerr img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  
+  margin-right: 100px;
+  margin-left: 100px;
+  margin-bottom: 10px;
+  margin-top: 8px;
+  border: 3px solid #d4af37;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+.site-footerr img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #d4af37;
+}
+
+/* 📱 Для телефонов */
+@media (max-width: 600px) {
+  .site-footerr .container {
+    gap: 14px;
+  }
+
+  .site-footerr {
+    padding: 14px;
+  }
+  
+
+  .site-footerr img {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+
+.site-header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    top: 0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent);
+    backdrop-filter: blur(6px);
+    z-index: 80;
+}
+
+/* Аватары мастеров */
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #333, #111);
+    font-weight: 700;
+    color: var(--gold);
+    font-size: 28px;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Секции */
+.section {
+    padding: 80px 20px;
+}
+
+.section.dark {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+}
+
+.section-title {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--gold);
+    font-family: Lobster, sans-serif;
+    margin: 0 0 24px;
+    text-align: center;
+}
+
+/* Галерея */
+.gallery {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Адаптивность для планшетов и ПК */
+@media (min-width: 768px) {
+    .gallery {
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .gallery img {
+        height: 300px;
+        border-radius: 20px;
+    }
+}
+
+/* Для маленьких экранов (телефон) */
+@media (max-width: 480px) {
+    .gallery {
+        gap: 8px;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .gallery img {
+        height: 180px;
+        border-radius: 12px;
+    }
+}
+
+.site-header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    top: 0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent);
+    backdrop-filter: blur(6px);
+    z-index: 80;
+}
+
+.buttons {
+  position: fixed;
+  bottom: 30px; /* разместим снизу — современно и удобно */
+  right: 30px;
+  z-index: 100;
+}
+
+#uploadBtn {
+  background-color: var(--gold);
+  color: #060606;
+  border: none;
+  width: 70px; /* ширина */
+  height: 70px; /* высота */
+  border-radius: 50%; /* делает кнопку круглой */
+  cursor: pointer;
+  font-size: 28px; /* размер иконки 📸 */
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s;
+}
+
+#uploadBtn:hover {
+  transform: scale(1.1);
+  background-color: #e0b938;
+  box-shadow: 0 0 15px #d4af37;
+}
+
+#clearBtn {
+    background-color: var(--gold);
+    color: #060606;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+#uploadBtn:hover,
+#clearBtn:hover {
+    transform: scale(1.1);
+    background-color: #d4aa2f;
+}
+
+.gallery-item {
+    position: relative;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: transform 0.3s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+.delete-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: rgba(255, 0, 0, 0.8);
+    border: none;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 10;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.lightbox-close:hover {
+    color: #d4af37;
+}
+
+/* Адаптивность для планшетов и ПК */
+/* Анимация появления картинки в Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    transform: scale(0.7);
+    animation: scaleUp 0.3s ease forwards;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.7);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+

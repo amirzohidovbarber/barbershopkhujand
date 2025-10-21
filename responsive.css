@@ -1,0 +1,11 @@
+/* css/responsive.css - TV/large screens tweaks */
+@media (min-width:1600px){
+  .hero-title{font-size:72px}
+  .container{max-width:1600px}
+  .master-grid{grid-template-columns:repeat(5,1fr)}
+}
+@media (min-width:2200px){
+  /* TV very wide */
+  .hero-title{font-size:96px}
+  .container{max-width:2200px}
+}

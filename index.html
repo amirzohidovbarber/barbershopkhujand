@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Amir Barber</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;700&display=swap"
+    rel="stylesheet" <!-- GSAP for smooth animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+  <div id="app" class="app">
+    <header class="site-header">
+      <div class="brand">Barber <span class="gold">Amir</span></div>
+      <nav class="nav-links">
+        <a href="#home">Главная</a>
+        <a href="./Gallery/gallery.html" class="">Галерея</a>
+
+      </nav>
+      <a href="tel:+992926777474" class="install-btn">Звонить</a>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="parallax">
+          <div class="layer layer-back" data-speed="0.2" aria-hidden="true"></div>
+          <div class="layer layer-mid" data-speed="0.5" aria-hidden="true"></div>
+          <div class="layer layer-front" data-speed="0.9" aria-hidden="true"></div>
+        </div>
+        <div class="hero-inner">
+          <div class="hero-logo">
+            <img src="./logo/photo_2025-10-21_17-39-19.jpg" alt="Amir Barber Logo">
+          </div>
+          <h1 class="hero-title">Amir <span class="gold">Barber</span></h1>
+          <p class="hero-sub">Королевский уход. Искусство стрижки.</p>
+          <div class="hero-actions">
+            <a href="https://dikidi.net/1908886" class="btn primary">Записаться</a>
+            <a href="#services" class="btn ghost">Услуги</a>
+          </div>
+        </div>
+
+        <footer class="site-footerr">
+          <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <a href="https://www.instagram.com/amirbarber___official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank"
+                style="display: inline-flex; align-items: center; gap: 4px; text-decoration: none; color: inherit;">
+                <svg
+                  xmlns="https://tse2.mm.bing.net/th/id/OIP.A_QLZ7Y9nBwaWnkhCbvGmQHaHZ?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3"
+                  width="60" height="60" fill="currentColor" viewBox="0 0 24 24">
+                </svg>
+              </a>
+            </div>
+
+            <div>
+              <a href="https://wa.me/992926777474" target="_blank" style="margin-left:10px;">
+                <img
+                  src="https://tse1.mm.bing.net/th/id/OIP.Eif37cBwT_mfc-BCXYWrXQHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3"
+                  alt="whatsapp"
+                  style="width:60px; height:60px; object-fit: cover; border-radius:50%; vertical-align:middle;">
+              </a>
+            </div>
+
+            <div>
+              <a href="https://www.instagram.com/amirbarber___official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank" style="margin-left:10px;">
+                <img src="https://www.instagram.com/static/images/ico/favicon-200.png/ab6eff595bb1.png" alt="instagram"
+                  style="width:60px; height:60px; object-fit: cover; border-radius:50%; vertical-align:middle;">
+              </a>
+            </div>
+
+            <div>
+              <a href="https://t.me/Amirjon7001" target="_blank" style="margin-left:10px;">
+                <img src="https://images.wondershare.com/filmora/article-images/2022/11/telegram-app.jpg" alt="telegram"
+                  style="width:60px; height:60px; object-fit: cover; border-radius:50%; vertical-align:middle;">
+              </a>
+            </div>
+
+            <div>
+              <a href="https://www.tiktok.com/@amirbarber__official?_t=ZS-90jh2OapiZr&_r=1" target="_blank"
+                style="margin-left:10px;">
+                <img
+                  src="https://th.bing.com/th/id/R.092ef1d41fabe836e08e3db191f951f7?rik=FKiPsW9AIRop7A&pid=ImgRaw&r=0"
+                  alt="tiktok"
+                  style="width:60px; height:60px; object-fit: cover; border-radius:50%; vertical-align:middle;">
+              </a>
+            </div>
+          </div>
+        </footer>
+      </section>
+
+
+
+
+
+
+
+
+
+
+      <header class="site-headerr">
+        <div class="buttons">
+          <button id="uploadBtn">📸</button>
+        </div>
+        <input type="file" id="fileInput" accept="image/*" style="display:none">
+      </header>
+      <section id="gallery" class="section">
+        
+        <div class="container">
+          <h2 class="section-title"><span class="gold">Галерея</span> работ</h2>
+          <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=60"
+              alt="">
+          </div>
+        </div>
+      </section>
+
+     
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <script>
+            // Автообновление года
+            document.getElementById('year').textContent = new Date().getFullYear();
+          </script>
+
+          <div class="muted">Худжанд, 32 мкр рядом Miami🏝️</div>
+        </div>
+    </footer>
+
+  </div>
+  <!-- Модальное окно для просмотра картинки -->
+  <div id="lightbox" class="lightbox">
+    <span id="closeLightbox" class="lightbox-close">&times;</span>
+    <img class="lightbox-img" src="">
+  </div>
+  <script src="js/galery.js"></script>
+  <script src="js/scroll-anim.js" defer></script>
+  <script src="js/booking.js" defer></script>
+  <script src="sw/register-sw.js" defer></script>
+</body>
+
+</html>
